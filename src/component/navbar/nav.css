@@ -1,0 +1,130 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 50px;
+}
+
+.nav_text {
+    width: 20%;
+}
+
+.nav_text h2 {
+    font-family: Pattaya;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.theme_box {
+    width: 20%;
+    justify-content: center;
+    display: flex;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 21px;
+    left: 1px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.input_div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    box-shadow: inset 0px 4px 19px rgba(0, 0, 0, 0.05);
+    margin: 10px 20px;
+    /* background-color: aliceblue; */
+    padding: 10px 20px;
+
+}
+
+.input {
+    padding: 10px 35px;
+    border-radius: 10px;
+    margin: 10px 0px;
+    background-color: aliceblue;
+    outline: none;
+    border: none;
+    width: 60%;
+
+}
+
+.search {
+    position: absolute;
+    left: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+}
+
+.close_nav {
+    cursor: pointer;
+    position: absolute;
+    right: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+}
