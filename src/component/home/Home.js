@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import DataContext from '../context'
 import './home.css'
+import '../popup/popup.css'
 import like from '../../Assets/like.png'
 import likew from '../../Assets/likew.png'
 
@@ -28,12 +29,12 @@ const Home = () => {
                     Data?.map((image, key) => (
                         <div className={theme ? 'img_div_dark' : "img_div_light"}>
                             <img className='image_div_img' src={image.urls.small} alt={image.alt_description} key={image.id} onClick={() => handelImgClick(image)} />
-                            <div className='popup_info'>
+                            <div className='popup_info mobile_popup_info'>
                                 <div className='user_side'>
                                     <img src={image?.user.profile_image?.large} alt="user loading" />
                                     <div>
-                                        <p className={theme ? "user_side_p_dark" : "user_side_p_light"}>{singleData?.user.first_name} {singleData?.user.last_name}</p>
-                                        <h6>{image?.user.instagram_username ? "@" + image?.user.instagram_username : ""} </h6>
+                                        <p className={theme ? "user_side_p_dark" : "user_side_p_light"}>{image?.user.first_name} {image?.user.last_name}</p>
+                                        {/* <h6 className=' mobile_user_insta'>{image?.user.instagram_username ? "@" + image?.user.instagram_username : ""} </h6> */}
                                     </div>
                                 </div>
                                 <div className='user_side_right'>

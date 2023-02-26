@@ -144,18 +144,16 @@
     .mobile_img_desc {
         width: 80%;
     }
+
+    .mobile_user_insta {
+        text-overflow: clip;
+        overflow: hidden;
+    }
 }
 
 @media(max-width:400px) {
-
-
-
     .popup {
         left: 10px;
         right: 10px;
-    }
-
-    .mobile_popup_info {
-        flex-wrap: wrap;
     }
 }

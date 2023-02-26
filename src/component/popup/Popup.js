@@ -25,7 +25,7 @@ const Popup = () => {
                         <img src={singleData?.user.profile_image?.medium} alt="user loading" />
                         <div>
                             <p className={theme ? "user_side_p_dark" : "user_side_p_light"}>{singleData?.user.first_name} {singleData?.user.last_name}</p>
-                            <h6>{singleData?.user.instagram_username ? "@" + singleData?.user.instagram_username : ""} </h6>
+                            <h6 className=' mobile_user_insta'>{singleData?.user.instagram_username ? "@" + singleData?.user.instagram_username : ""} </h6>
                         </div>
                     </div>
                     <p className=' mobile_img_desc'>{singleData?.alt_description}</p>
