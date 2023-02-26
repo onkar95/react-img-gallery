@@ -9,12 +9,13 @@ export const DataProvider = ({ children }) => {
     const [searchVal, setSearchVal] = useState("")
     const [popup, setpopup] = useState(false)
     const [theme, setTheme] = useState(false)
+    const [reset, setreset] = useState(false)
 
     const REACT_APP_UNSPLASH_ACCESS_KEY = "iZpEeBkTPWjd8xGVMmUfwgC7tUcqOS83YsXELNx0VHg"
-    const REACT_APP_UNSPLASH_SECRET_KEY = "6X3YhuHrM9_MLuXEbssasPByQfbSXFcWZfEBYbPg5Kc"
 
     useEffect(() => {
-        if (searchVal !== "") {
+
+        function getSearched() {
             axios.get('https://api.unsplash.com/search/photos', {
                 params: {
                     client_id: REACT_APP_UNSPLASH_ACCESS_KEY,
@@ -24,16 +25,11 @@ export const DataProvider = ({ children }) => {
                 }
             })
                 .then((d) => {
-                    console.log(d.data)
                     setData(d.data.results)
                 })
                 .catch((err) => console.log(err))
         }
-    }, [searchVal])
-
-    useEffect(() => {
-        console.log(Data)
-        if (Data.length === 0) {
+        function getRandom() {
             axios.get('https://api.unsplash.com/photos', {
                 params: {
                     client_id: REACT_APP_UNSPLASH_ACCESS_KEY,
@@ -42,12 +38,16 @@ export const DataProvider = ({ children }) => {
                 }
             })
                 .then((d) => {
-                    console.log(d.data)
                     setData(d.data)
                 })
                 .catch((err) => console.log(err))
         }
-    }, [])
+
+        if (searchVal !== "") setTimeout(getSearched(), 3000);
+        if (Data.length === 0) getRandom();
+        //eslint-disable-next-line
+    }, [searchVal, reset,])
+
 
     return (
         <DataContext.Provider value={{
@@ -55,7 +55,8 @@ export const DataProvider = ({ children }) => {
             singleData, setSingleData,
             searchVal, setSearchVal,
             popup, setpopup,
-            theme, setTheme
+            theme, setTheme,
+            reset, setreset
         }}>
             {children}
         </DataContext.Provider >

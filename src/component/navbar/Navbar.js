@@ -6,9 +6,10 @@ import close from "../../Assets/close.png"
 
 
 const Navbar = () => {
-    const { searchVal, setSearchVal, theme, setTheme } = useContext(DataContext)
+    const { searchVal, setSearchVal, theme, setTheme, setreset, reset } = useContext(DataContext)
 
     const handelclear = () => {
+        setreset(!reset)
         setSearchVal("")
     }
     return (
@@ -23,9 +24,9 @@ const Navbar = () => {
             </div>
             <div className='theme_box'>
                 <label>{!theme ? "Dark mode" : "light mode"}</label>
-                <label class="switch" >
+                <label className="switch" >
                     <input type="checkbox" value={theme} onClick={() => setTheme(!theme)} />
-                    <span class="slider round"></span>
+                    <span className="slider round"></span>
                 </label>
             </div>
         </div>
