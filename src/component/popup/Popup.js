@@ -13,14 +13,14 @@ const Popup = () => {
     return (
         <div className=" popup_main" >
 
-            <div id="popup" className={theme ? 'popup popup_main_dark' : "popup popup_main_light"} onClick={() => setpopup(!popup)}>
-                <div className='close'>
+            <div id="popup" className={theme ? 'popup popup_main_dark' : "popup popup_main_light"} >
+                <div className='close' onClick={() => setpopup(!popup)}>
                     <img className='close_img' src={close} alt="close" />
                 </div>
                 <div className='popup_img'>
                     <img src={singleData?.urls.full} alt={singleData?.alt_description || "loading"} />
                 </div>
-                <div className='popup_info'>
+                <div className='popup_info mobile_popup_info'>
                     <div className='user_side'>
                         <img src={singleData?.user.profile_image?.medium} alt="user loading" />
                         <div>
@@ -28,7 +28,7 @@ const Popup = () => {
                             <h6>{singleData?.user.instagram_username ? "@" + singleData?.user.instagram_username : ""} </h6>
                         </div>
                     </div>
-                    <p>{singleData?.alt_description}</p>
+                    <p className=' mobile_img_desc'>{singleData?.alt_description}</p>
                     <div className='user_side_right'>
                         <p>{singleData?.likes > 1000 ? singleData?.likes % 100 + "K" : singleData?.likes}</p>
                         {!theme ? <img src={like} alt="user loading" /> : <img src={likew} alt="user loading" />}

@@ -116,3 +116,46 @@
     width: 25px;
     height: 30px;
 }
+
+@media(max-width:800px) {
+
+
+    .popup_info {
+        padding: 0 5px;
+    }
+
+    .user_side {
+        padding: 10px 3px;
+    }
+
+    .popup {
+        top: 25px;
+        height: max-content;
+    }
+
+    .mobile_popup_info {
+        flex-wrap: wrap;
+    }
+
+    .popup_img img {
+        height: 250px;
+    }
+
+    .mobile_img_desc {
+        width: 80%;
+    }
+}
+
+@media(max-width:400px) {
+
+
+
+    .popup {
+        left: 10px;
+        right: 10px;
+    }
+
+    .mobile_popup_info {
+        flex-wrap: wrap;
+    }
+}
