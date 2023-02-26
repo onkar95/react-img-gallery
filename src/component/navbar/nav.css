@@ -103,7 +103,7 @@ input:checked+.slider:before {
     background-color: aliceblue;
     outline: none;
     border: none;
-    width: 60%;
+    width: 100%;
 
 }
 
