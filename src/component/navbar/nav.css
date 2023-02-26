@@ -2,12 +2,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 10px 20px; */
+    padding: 10px 20px;
     margin-bottom: 50px;
 }
 
 .nav_text {
-    width: 10%;
+    /* width: 20%; */
 }
 
 .nav_text h2 {
@@ -20,7 +20,7 @@
 }
 
 .theme_box {
-    width: 20%;
+    /* width: 20%; */
     justify-content: center;
     display: flex;
 }
@@ -46,8 +46,8 @@
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
 .slider:before {
@@ -57,16 +57,16 @@
     width: 21px;
     left: 1px;
     background-color: white;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
 input:checked+.slider {
-    background-color: #2196f3;
+    background-color: #2196F3;
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #2196f3;
+    box-shadow: 0 0 1px #2196F3;
 }
 
 input:checked+.slider:before {
@@ -89,10 +89,11 @@ input:checked+.slider:before {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    margin: 10px 20px;
-    /* background-color: aliceblue; */
-    padding: 10px 20px;
+    width: 60%;
+    margin: 0px 20px;
+    padding: 0px 20px;
+    background-color: aliceblue;
+
 }
 
 .input {
@@ -103,11 +104,12 @@ input:checked+.slider:before {
     outline: none;
     border: none;
     width: 60%;
+
 }
 
 .search {
     position: absolute;
-    left: 18%;
+    left: 2%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,7 +120,7 @@ input:checked+.slider:before {
 .close_nav {
     cursor: pointer;
     position: absolute;
-    right: 18%;
+    right: 2%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,12 +128,30 @@ input:checked+.slider:before {
     width: 30px;
 }
 
-@media (max-width: 800px) {
-    .search {
-        left: 14%;
+@media(max-width:500px) {
+    .navbar {
+        /* padding: 0; */
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .close_nav {
-        right: 14%;
+    .input_div {
+        width: 70%;
+    }
+
+    .theme_txt {
+        display: none;
+    }
+}
+
+@media(max-width:457px) {
+
+
+    .input_div {
+        width: 60%;
+    }
+
+    .theme_txt {
+        display: none;
     }
 }

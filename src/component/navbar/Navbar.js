@@ -23,7 +23,7 @@ const Navbar = () => {
                 <img onClick={() => handelclear()} className='close_nav' src={close} alt="loading" />
             </div>
             <div className='theme_box'>
-                <label>{!theme ? "Dark mode" : "light mode"}</label>
+                <label className='theme_txt'>{!theme ? "Dark mode" : "light mode"}</label>
                 <label className="switch" >
                     <input type="checkbox" value={theme} onClick={() => setTheme(!theme)} />
                     <span className="slider round"></span>
