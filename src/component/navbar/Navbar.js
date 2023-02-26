@@ -10,6 +10,7 @@ const Navbar = () => {
 
     const handelclear = () => {
         setreset(!reset)
+        console.log(reset)
         setSearchVal("")
     }
     return (

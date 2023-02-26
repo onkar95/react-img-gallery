@@ -29,6 +29,11 @@ export const DataProvider = ({ children }) => {
                 })
                 .catch((err) => console.log(err))
         }
+        if (searchVal !== "") setTimeout(getSearched(), 3000);
+        //eslint-disable-next-line
+    }, [searchVal])
+
+    useEffect(() => {
         function getRandom() {
             axios.get('https://api.unsplash.com/photos', {
                 params: {
@@ -42,11 +47,9 @@ export const DataProvider = ({ children }) => {
                 })
                 .catch((err) => console.log(err))
         }
-
-        if (searchVal !== "") setTimeout(getSearched(), 3000);
-        if (Data.length === 0) getRandom();
+        if (Data.length === 0 || reset) getRandom();
         //eslint-disable-next-line
-    }, [searchVal, reset,])
+    }, [reset,])
 
 
     return (
