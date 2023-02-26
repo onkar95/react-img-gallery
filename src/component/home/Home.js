@@ -1,12 +1,11 @@
 import React, { useContext } from 'react'
 import DataContext from '../context'
 import './home.css'
-import '../popup/popup.css'
 import like from '../../Assets/like.png'
 import likew from '../../Assets/likew.png'
 
 const Home = () => {
-    const { Data, singleData, setSingleData, setpopup, popup, theme } = useContext(DataContext)
+    const { Data, setSingleData, setpopup, popup, theme } = useContext(DataContext)
 
     const handelImgClick = (val) => {
         setSingleData(val)
@@ -42,8 +41,6 @@ const Home = () => {
                                     {!theme ? <img src={like} alt="user loading" /> : <img src={likew} alt="user loading" />}
                                 </div>
                             </div>
-                            {/* {popup && singleData.id === image.id ? <Popup /> : ""} */}
-
                         </div>
                     ))
                 }
